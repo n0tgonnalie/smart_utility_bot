@@ -31,10 +31,9 @@ bot = Bot(TOKEN)
 # ===== КЛАВИАТУРЫ =====
 def test_kb():
     kb_list = [
-        [KeyboardButton(text="/info"), KeyboardButton(text="Заполнить анкету")],
-        [KeyboardButton(text="зачем?"), KeyboardButton(text="ссылки")],
-        [KeyboardButton(text="Выбрать теорию"), KeyboardButton(text="добавление теории")],
-        [KeyboardButton(text="/calc")]
+        [KeyboardButton(text="зачем ты нужен?"), KeyboardButton(text="Заполнить анкету")],
+        [KeyboardButton(text="/calc"), KeyboardButton(text="ссылки")],
+        [KeyboardButton(text="Теория"), KeyboardButton(text="добавление теории")],
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=kb_list, resize_keyboard=True)
     return keyboard
@@ -126,16 +125,9 @@ async def command_start(message: Message):
     )
 
 
-@dp.message(Command('info'))
-async def command_info(message: Message):
-    await message.answer(
-        'Я являюсь ботом для помощи в расчётах, учёбе, работе и повседневной жизни. В скорем времени мой функционал будет пополнятся!')
-
-
-@dp.message(F.text == 'зачем?')
+@dp.message(F.text == 'зачем ты нужен?')
 async def get_inline_btn_link(message: Message):
-    await message.answer('ну затем, сам поймёшь')
-    await message.answer('или загугли, не маленький')
+    await message.answer('Я - бот для помощи в расчётах, учёбе, работе для повседневной жизни. В скором времени мой функционал будет пополнятся!')
 
 
 class Register(StatesGroup):
@@ -187,7 +179,7 @@ async def get_inline_btn_link(message: Message):
     await message.answer('Это важные ссылки', reply_markup=link_kb())
 
 
-@dp.message(F.text == 'Выбрать теорию')
+@dp.message(F.text == 'Теория')
 async def trip(message: Message):
     await message.answer('Выберите теорию:', reply_markup=city())
 
