@@ -120,7 +120,7 @@ def get_calculator_keyboard() -> InlineKeyboardMarkup:
 @dp.message(Command('start'))
 async def command_start(message: Message):
     await message.answer(
-        'Hello, выбери функцию с помощью которой я смогу помочь тебе, а инече... ничего не сделаю',
+        'Привет! Выбери функцию с помощью которой я смогу помочь тебе, а иначе... ничего не сделаю :)',
         reply_markup=test_kb()
     )
 
