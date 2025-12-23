@@ -21,7 +21,7 @@ from aiogram.enums import ParseMode
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.client.default import DefaultBotProperties
 
-# Настройка логирования
+
 logging.basicConfig(level=logging.INFO)
 
 dp = Dispatcher()
@@ -140,6 +140,14 @@ async def get_inline_btn_link(message: Message):
 
 Просто напиши, что тебя интересует, или выбери одну из опций ниже!"""
     await message.answer(text)
+
+
+@dp.message(F.text == 'добавление теории')
+async def add_theory(message: Message):
+    await message.answer(
+        'Эта функция в разработке, но скоро появится!',
+    )
+
 
 
 class Register(StatesGroup):
