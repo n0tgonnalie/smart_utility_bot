@@ -769,6 +769,7 @@ async def main():
         )
     ''')
 
+
     cursor.execute("INSERT INTO users (name, age) VALUES (?, ?)", ("Alice", 30))
     cursor.execute("INSERT INTO users (name, age) VALUES (?, ?)", ("Bob", 25))
 
