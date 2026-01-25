@@ -30,6 +30,8 @@ bot = Bot(TOKEN)
 last_callback_time = {}
 
 
+
+
 def test_kb():
     kb_list = [
         [KeyboardButton(text="зачем ты нужен?"), KeyboardButton(text="Заполнить анкету")],
