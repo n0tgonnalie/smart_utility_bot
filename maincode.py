@@ -1,4 +1,4 @@
-TOKEN = '8504544886:AAF6sLIQNakDcrWmKj2yu2UXI4e72nLyjCA'
+TOKEN = ''
 import sqlite3
 import asyncio
 import logging
